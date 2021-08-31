@@ -1,13 +1,187 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+
+*{
+  font-family: 'Raleway', sans-serif;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+  background: linear-gradient(90deg, hsla(272, 68%, 52%, 1) 0%, hsla(17, 60%, 52%, 1) 100%);
+}
+
+.header{
+  font-weight: 500;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.entire__container{
+  text-align: center;
+  justify-content: center;
+}
+
+.innerbox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.innerbox__contacts{
+  background: white;
+  background:rgba(255,255,255, 0.5);
+  width: 60vmax;
+  height: 40vmax;
+  border-radius: 15px 0 0 15px;
+  
+  display: flex;
+  justify-content: center;
+}
+
+
+.innerbox__contactsHeader{
+  position: fixed;
+  width: 60%;
+  height: 60px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  padding: 20px 10%;
+  justify-content: space-between;
+}
+
+.searchContacts{
+  width: 20vmax;
+  height: 3vmax;
+  background: none;
+  outline: none;
+  border-radius: 15px;
+  border: 2px solid #ffffff;
+  display: block;
+}
+.searchContacts:hover{
+  border-color: rgb(0, 0, 0);
+}
+.searchContacts:focus{
+  border-color: aquamarine;
+}
+label[for=searchContacts]{
+  font-size: 1.2rem;
+  position: absolute;
+  cursor: text;
+  left: 23rem;
+}
+
+.innerbox_contactsList{
+  position: relative;
+  width: 90%;
+  height: 85%;
+  top:65px;
+  overflow-y: auto;
+}
+.innerbox_contactsList::-webkit-scrollbar{
+  display: none;
+}
+
+.contact{
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3));
+  width:100%;
+  height: 100px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  text-align: left;
+  
+}
+
+.contact__usernameCircle{
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 90px;
+  height: 90px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  margin-left: 20px;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact__summary__name{
+  font-size: 25px;
+  height: 1.5em;
+  position: absolute;
+  top: 35px;
+  left: 15%;
+}
+
+.contact__summary__moreInfo{
+  position: absolute;
+  right: 15%;
+  top: 33%;
+  font-size: 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.contact__summary__favourite{
+  position: absolute;
+  right: 5%;
+  top: 25%;
+}
+
+
+.innerbox__information{
+  background: white;
+  background: rgba(255,255,255, 0.5);
+  width: 30vmax;
+  height: 40vmax;
+  border-radius: 0 15px 15px 0;
+  overflow-y: auto;
+  text-align: left;
+}
+.innerbox__information::-webkit-scrollbar{
+  display: none;
+}
+
+.innerbox__information__header{
+  font-size: 25px;
+  margin: 20px;
+}
+
+.innerbox__information__username{
+  font-size: 25px;
+  margin: 20px;
+}
+
+.innerbox__information__name{
+  font-size: 25px;
+  margin: 20px;
+}
+.innerbox__information__email{
+  font-size: 25px;
+  margin: 20px;
+}
+.innerbox__information__address{
+  font-size: 25px;
+  margin: 20px;
+  
+}
+.innerbox__information__phone{
+  font-size: 25px;
+  margin: 20px;
+}
+.innerbox__information__website{
+  font-size: 25px;
+  margin: 20px;
+}
+.innerbox__information__company{
+  font-size: 25px;
+  margin: 20px;
+  
 }
