@@ -1,11 +1,27 @@
+import { useEffect, useState } from "react"
 
+const ContactListHeader = ({ onSearch }) => {
 
-const ContactListHeader = ({ contacts }) => {
+    const [search, setSearch] = useState("");
+
+    const searchQuery = (event) =>
+        setSearch(event.target.value)
+
+    // Fired when onChange is called, 
+    // fixes issue of lagging letter in 
+    // search bar due to useState being an async fx
+    useEffect(() => {
+        onSearch({ search })
+    }, [search])
+
     return (
-        <div className="innerbox__contactsHeader">
+        <div className="innerbox__contactsHeader" onChange={searchQuery}>
             <h3>Contact list</h3>
-            <label htmlFor="searchContacts">Search</label>
-            <input type="text" className="searchContacts"></input>
+            <div className="searchContainer">
+                <input type="text" className="searchContacts" placeholder=" "
+                    value={search}></input>
+                <label htmlFor="searchContacts">Search</label>
+            </div>
             <button>Sort</button>
         </div>
     )
