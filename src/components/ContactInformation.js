@@ -1,4 +1,4 @@
-const ContactInformation = () => {
+const ContactInformation = ({ contact }) => {
     return (
         <div className="innerbox__information">
 
@@ -6,48 +6,48 @@ const ContactInformation = () => {
 
             <div className="innerbox__information__scrollableInfo">
                 <div >
-                    username : Renyi
+                    username : {contact.username ? contact.username : "N/A"}
                 </div>
                 <div >
-                    name : Aloe Gian
+                    name : {contact.name ? contact.name : "N/A"}
                 </div>
 
                 <div >
-                    email : jiji@aloe.com
+                    email : {contact.email ? contact.email : "N/A"}
                 </div>
                 <div >
-                    phone : 24141032
+                    phone : {contact.phone ? contact.phone : "N/A"}
                 </div>
                 <div >
-                    website : hildegard.org
+                    website : {contact.website ? contact.website : "N/A"}
                 </div>
 
                 <div className="innerbox__information__address">
                     <h3>Address</h3>
                     <div>
-                        street : Kulas Light
+                        street : {contact.address ? contact.address.street : "N/A"}
                     </div>
                     <div>
-                        suite : Apt. 556
+                        suite : {contact.address ? contact.address.suite : "N/A"}
                     </div>
                     <div>
-                        city : Gwenborough
+                        city : {contact.address ? contact.address.city : "N/A"}
                     </div>
                     <div>
-                        zipcode 92998-3874
+                        zipcode : {contact.address ? contact.address.zipcode : "N/A"}
                     </div>
                 </div>
 
                 <div className="innerbox__information__company">
                     <h3>Company</h3>
                     <div>
-                        name : Romaguera-Crona
+                        name : {contact.company ? contact.company.name : "N/A"}
                     </div>
                     <div>
-                        catchphrase : Multi-layered client-server neural-net
+                        catchphrase : {contact.company ? contact.company.catchPhrase : "N/A"}
                     </div>
                     <div>
-                        bs : harness real-time e-markets
+                        bs : {contact.company ? contact.company.bs : "N/A"}
                     </div>
                 </div>
             </div>

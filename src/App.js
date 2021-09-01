@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import Header from './components/Header'
 import ContactList from './components/ContactList'
@@ -6,57 +6,86 @@ import ContactInformation from './components/ContactInformation'
 
 function App() {
 
-  const [contacts, setContacts] = useState([
-    {
-      "id": 1,
-      "name": "Leanne Graham",
-      "username": "Bret",
-      "email": "Sincere@april.biz",
-      "phone": '7675345213'
-    },
-    {
-      "id": 2,
-      "name": "Ervin Howell",
-      "username": "Antonette",
-      "email": "Shanna@melissa.tv",
-      "phone": '55636341'
-    },
-    {
-      "id": 3,
-      "name": "Aloe Vera",
-      "username": "Renyi",
-      "email": "Aloevera@jiji.com",
-      "phone": '412414214523'
-    },
-    {
-      "id": 4,
-      "name": "Jiji gg",
-      "username": "Jiji",
-      "email": "jiji@aloe.com",
-      "phone": '42141412414124'
-    },
-    {
-      "id": 5,
-      "name": "Nobd",
-      "username": "JN",
-      "email": "der.com",
-      "phone": '234121414141'
-    },
-    {
-      "id": 6,
-      "name": "vain",
-      "username": "glory",
-      "email": "vg.com",
-      "phone": '0404040440'
+  // state for contact list
+  const [contacts, setContacts] = useState([])
+  // state for filtering
+  const [filterContacts, setFilterContacts] = useState([])
+
+  // useEffect hook for contact list state change
+  useEffect(() => {
+    const getContacts = async () => {
+      const contactsFromJsonPlaceholder = await fetchContacts()
+      // set contact list state
+      setContacts(contactsFromJsonPlaceholder)
+      // Set filter list state
+      setFilterContacts(contactsFromJsonPlaceholder)
     }
-  ])
+    getContacts()
+  }, [])
+
+  // Fetch contacts
+  const fetchContacts = async () => {
+    const call = await fetch('https://jsonplaceholder.typicode.com/users')
+    const data = await call.json()
+    return data
+  }
+
+
+  const fetchSearch = (query) => {
+    console.log(query.search)
+    setFilterContacts(contacts.filter(contact => Object.keys(contact).some(key => fetchFilter(contact, key, query))));
+  }
+
+  // fetchSearch filter
+  const fetchFilter = (contact, key, query) => {
+    // query is empty string
+    if (query === "") {
+      return contact
+    }
+    // If the value is an object
+    else if (typeof contact[key] === 'object') {
+      for (var attrb in contact[key]) {
+        // If the value is a string
+        if (typeof contact[key][attrb] === 'string') {
+          if (contact[key][attrb].toLowerCase().includes(query.search.toLowerCase())) {
+            return contact
+          }
+        }
+        // If the value is a number
+        else if (typeof contact[key][attrb] === 'number') {
+          if (contact[key][attrb] === query.search) {
+            return contact
+          }
+        }
+      }
+    }
+    // If the value is a number  i.e zipcode, phone number
+    else if (typeof contact[key] === 'number') {
+      if (contact[key] === query.search) {
+        return contact
+      }
+    }
+    // If the value is a string
+    else {
+      if (contact[key].toLowerCase().includes(query.search.toLowerCase())) {
+        return contact
+      }
+    }
+  }
+
+  // State for Contact information (right box)
+  const [contactInfo, setContactInfo] = useState([])
+  // onClick for more information
+  const clickMoreInfo = (contact) => {
+    setContactInfo(contact)
+  }
 
   return (
     <div className="entire__container">
       <Header />
       <div className="innerbox">
-        <ContactList contacts={contacts} />
-        <ContactInformation />
+        <ContactList contacts={filterContacts} clickMoreInfo={clickMoreInfo} onSearch={fetchSearch} />
+        <ContactInformation contact={contactInfo} />
       </div>
     </div>
   );

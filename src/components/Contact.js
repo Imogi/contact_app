@@ -1,9 +1,9 @@
 import { AiFillStar } from "react-icons/ai";
 
-const Contact = ({ contact }) => {
+const Contact = ({ contact, clickMoreInfo }) => {
     return (
         <div className="contact">
-            <div style={{ color: 'white', fontSize: '99%' }} className="contact__usernameCircle">
+            <div style={{ color: 'white' }} className="contact__usernameCircle">
                 {contact.username}
             </div>
             <div className="contact__summary">
@@ -11,13 +11,13 @@ const Contact = ({ contact }) => {
                     Name : {contact.name}
                 </div>
             </div>
-            <div className="contact__summary__favourite">
-                <AiFillStar style={{ fontSize: '50px', color: 'blue', cursor: 'pointer' }} />
+            <div className="contact__favourite">
+                <AiFillStar style={{ fontSize: '50px', cursor: 'pointer' }} />
             </div>
-            <button className="contact__summary__moreInfo">
-                More Information
+            <button className="contact__moreInfo" onClick={() => clickMoreInfo(contact)}>
+                MORE INFORMATION
             </button>
-        </div>
+        </div >
     )
 }
 

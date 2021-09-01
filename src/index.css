@@ -27,7 +27,6 @@ body{
   justify-content: center;
 }
 .innerbox__contacts{
-  background: white;
   background:rgba(255,255,255, 0.5);
   width: 60vmax;
   height: 40vmax;
@@ -49,25 +48,36 @@ body{
 }
 
 .searchContacts{
+  font-size: 20px;
   width: 20vmax;
-  height: 3vmax;
+  height: 2vmax;
   background: none;
   outline: none;
   border-radius: 15px;
   border: 2px solid #ffffff;
-  display: block;
+  padding: 1.25rem;
 }
 .searchContacts:hover{
   border-color: rgb(0, 0, 0);
 }
 .searchContacts:focus{
-  border-color: aquamarine;
+  border-color: rgb(0, 0, 0);
 }
 label[for=searchContacts]{
   font-size: 1.2rem;
+  padding: 0 0.3rem;
   position: absolute;
   cursor: text;
+  top: 1rem;
   left: 23rem;
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+  background-color: hsl(294,37%,72%);
+}
+.searchContacts:focus ~ label[for=searchContacts],
+.searchContacts:not(:placeholder-shown).searchContacts:not(:focus)
+~ label[for=searchContacts]{
+  top: 0;
+  font-size: 0.8rem;
 }
 
 .innerbox_contactsList{
@@ -83,7 +93,6 @@ label[for=searchContacts]{
 
 .contact{
   position: relative;
-  cursor: pointer;
   display: flex;
   background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3));
   width:100%;
@@ -91,11 +100,10 @@ label[for=searchContacts]{
   margin-bottom: 15px;
   border-radius: 15px;
   text-align: left;
-  
 }
 
 .contact__usernameCircle{
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: hsla(272, 68%, 52%, 1);
   width: 90px;
   height: 90px;
   -webkit-border-radius: 50%;
@@ -108,32 +116,40 @@ label[for=searchContacts]{
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 50% ;
 }
 
 .contact__summary__name{
   font-size: 25px;
-  height: 1.5em;
   position: absolute;
   top: 35px;
   left: 15%;
 }
 
-.contact__summary__moreInfo{
+.contact__moreInfo{
   position: absolute;
   right: 15%;
   top: 33%;
-  font-size: 30px;
+  font-size: 25px;
   border: none;
   cursor: pointer;
   border-radius: 15px;
+  transition: 0.4s;
+}
+.contact__moreInfo:hover{
+  transform: scale(1.1);
 }
 
-.contact__summary__favourite{
+.contact__favourite{
   position: absolute;
+  color: rgba(255,255,255, 0.5);
   right: 5%;
   top: 25%;
+  transition: 0.4s;
 }
-
+.contact__favourite:hover{
+  transform: scale(1.1);
+}
 /*
   CSS for right box
 */
