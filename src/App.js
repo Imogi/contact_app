@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Header from './components/Header'
 import ContactList from './components/ContactList'
 import ContactInformation from './components/ContactInformation'
+import PopupModal from './components/PopupModal';
 
 function App() {
 
@@ -10,6 +11,11 @@ function App() {
   const [contacts, setContacts] = useState([])
   // state for filtering
   const [filterContacts, setFilterContacts] = useState([])
+
+  // boolean state for toggle favourites button
+  // false means showing all contacts
+  // true means showing all favourite contacts
+  const [toggle, setToggle] = useState(false)
 
   // useEffect hook for contact list state change
   useEffect(() => {
@@ -30,7 +36,7 @@ function App() {
     return data
   }
 
-
+  // receives the search query from search bar in ContactListHeader
   const fetchSearch = (query) => {
     console.log(query.search)
     setFilterContacts(contacts.filter(contact => Object.keys(contact).some(key => fetchFilter(contact, key, query))));
@@ -80,13 +86,22 @@ function App() {
     setContactInfo(contact)
   }
 
+
+
+
   return (
     <div className="entire__container">
       <Header />
       <div className="innerbox">
-        <ContactList contacts={filterContacts} clickMoreInfo={clickMoreInfo} onSearch={fetchSearch} />
+        <ContactList contacts={filterContacts}
+          clickMoreInfo={clickMoreInfo}
+          onSearch={fetchSearch}
+          clicked={() => setToggle(!toggle)}
+          toggle={toggle}
+        />
         <ContactInformation contact={contactInfo} />
       </div>
+      <PopupModal />
     </div>
   );
 }
