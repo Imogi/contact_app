@@ -150,27 +150,19 @@ label[for=searchContacts]{
 .contact__moreInfo{
   position: absolute;
   right: 7%;
-  top: 33%;
+  top: 30%;
   font-size: 25px;
   border: none;
   cursor: pointer;
-  border-radius: 15px;
+  border-radius: 10px;
   transition: 0.4s;
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.05);
 }
 .contact__moreInfo:hover{
   transform: scale(1.1);
 }
 
-.contact__favourite{
-  position: absolute;
-  color: rgba(255,255,255, 0.5);
-  right: 5%;
-  top: 25%;
-  transition: 0.4s;
-}
-.contact__favourite:hover{
-  transform: scale(1.1);
-}
 /*
   CSS for CONTACT INFORMATION box 
 */
