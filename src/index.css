@@ -136,7 +136,8 @@ label[for=searchContacts]{
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 90% ;
+  font-size: 0.9vw ;
+  word-break:break-all;
 }
 
 .contact__summary__name{
