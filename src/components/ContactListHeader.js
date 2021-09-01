@@ -18,7 +18,7 @@ const ContactListHeader = ({ onSearch }) => {
         <div className="innerbox__contactsHeader" onChange={searchQuery}>
             <h3>Contact list</h3>
             <div className="searchContainer">
-                <input type="text" className="searchContacts" placeholder=" "
+                <input type="text" id="searchContacts" placeholder=" "
                     value={search}></input>
                 <label htmlFor="searchContacts">Search</label>
             </div>
