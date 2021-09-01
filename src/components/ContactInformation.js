@@ -19,11 +19,12 @@ const ContactInformation = ({ contact }) => {
                 <div className="innerbox__information__scrollableInfo__div">
                     <HiOutlineMail /> : {contact.email ? contact.email : "N/A"}
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <span className="clipboardCopyContainer">
-                        <CopyToClipBoard contact={contact} />
-                        <span className="tooltip-clipboardCopy"> Copy to clipboard </span>
-                    </span>
-
+                    {contact.id ?
+                        <span className="clipboardCopyContainer" >
+                            <CopyToClipBoard contact={contact} />
+                            <span className="tooltip-clipboardCopy"> Copy to clipboard </span>
+                        </span>
+                        : ''}
                 </div>
                 <div className="innerbox__information__scrollableInfo__div">
                     <BsPhone /> : {contact.phone ? contact.phone : "N/A"}
