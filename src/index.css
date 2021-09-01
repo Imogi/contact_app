@@ -73,19 +73,17 @@ label[for=searchContacts]{
   font-size: 1.2rem;
   position: absolute;
   cursor: text;
-  top: 0;
-  left: 2rem;
+  top: 10%;
+  left: 4rem;
   transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
-  background-color: hsl(294,37%,72%);
+  background-color: hsl(308,35%,73%);
   padding: 0 0.3rem;
 }
-label[for=searchContacts]:hover{
-  z-index: 0;
-}
+
 #searchContacts:focus ~ label[for=searchContacts],
 #searchContacts:not(:placeholder-shown)#searchContacts:not(:focus)
 ~ label[for=searchContacts]{
-  top: -1rem;
+  top: -0.8rem;
   font-size: 0.8rem;
 }
 
@@ -120,12 +118,12 @@ label[for=searchContacts]:hover{
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
-  margin-left: 20px;
+  margin-left: 15px;
   margin-top: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 50% ;
+  font-size: 90% ;
 }
 
 .contact__summary__name{
@@ -137,7 +135,7 @@ label[for=searchContacts]:hover{
 
 .contact__moreInfo{
   position: absolute;
-  right: 15%;
+  right: 7%;
   top: 33%;
   font-size: 25px;
   border: none;
@@ -183,19 +181,77 @@ label[for=searchContacts]:hover{
   position: relative;
   font-size: 25px;
   top: 80px;
-  width: 90%;
+  width: 95%;
   height: 80%;
   overflow-y: auto;
+  display: block;
 }
 .innerbox__information__scrollableInfo::-webkit-scrollbar{
   display: none;
 }
 
-/*
-.innerbox__information__address{
-
+.innerbox__information__scrollableInfo__div{
+  margin: 10px;
 }
 
-.innerbox__information__company{
-  
-} */
+/*
+  CSS for ReturnToTopBtn
+*/
+.scroll-to-top{
+  cursor: pointer;
+  position: fixed;
+  bottom: 15px;
+  left: 35%;
+  width: 50px;
+  height: 50px;
+  display: block;
+  background-color: rgba(255,255,255, 1);
+  border-radius: 50%;
+  transition: 0.4s;
+  font-size: 2vmax;
+}
+
+.scroll-to-top:hover{
+  animation: bounce-up 1s linear infinite;
+}
+@keyframes bounce-up
+{
+    to {bottom: 5px;}
+}
+
+/*
+  CSS for copy to clipboard
+*/
+.clipboardCopyContainer{
+  position: relative;
+}
+.clipboardCopyContainer .tooltip-clipboardCopy{
+  visibility: hidden;
+  width: 120px;
+  background-color: white;
+  color: rgb(2, 2, 2);
+  text-align: center;
+  position: fixed;
+  z-index: 1;
+  font-size: 15px;
+  margin: 5px;
+}
+.clipboardCopyContainer:hover .tooltip-clipboardCopy {
+  visibility: visible;
+}
+
+.copyToClipBoard{
+  cursor: pointer;
+}
+
+.popupModal{
+  background-color: rgb(57, 214, 91);
+  border-radius: 10px;
+  width: 13%;
+  padding: 10px;
+  font-size: 1vmax;
+  position: fixed;
+  left: 45%;
+  bottom: 10px;
+  display: none;
+}

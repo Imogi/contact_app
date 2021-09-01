@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-const ContactListHeader = ({ onSearch }) => {
+const ContactListHeader = ({ onSearch, onClick, toggle }) => {
 
     const [search, setSearch] = useState("");
 
@@ -16,14 +16,14 @@ const ContactListHeader = ({ onSearch }) => {
 
     return (
         <div className="innerbox__contactsHeader" onChange={searchQuery}>
-            <h3>Contact list</h3>
+            <h3 style={{ fontSize: '2vmax' }}>Contact list</h3>
             <div className="searchContainer">
                 <input type="text" id="searchContacts" placeholder=" "
                     value={search}></input>
-                <label htmlFor="searchContacts">Search</label>
+                <label htmlFor="searchContacts">Search contacts</label>
             </div>
-            <button>Sort</button>
-        </div>
+
+        </div >
     )
 }
 
