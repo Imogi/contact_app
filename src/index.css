@@ -46,37 +46,46 @@ body{
   padding: 20px 10%;
   justify-content: space-between;
 }
-
-.searchContacts{
-  font-size: 20px;
+.searchContainer{
+  position: relative;
   width: 20vmax;
   height: 2vmax;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#searchContacts{
+  position: absolute;
+  font-size: 20px;
   background: none;
   outline: none;
   border-radius: 15px;
   border: 2px solid #ffffff;
-  padding: 1.25rem;
+  padding: 0.5rem;
 }
-.searchContacts:hover{
+#searchContacts:hover{
   border-color: rgb(0, 0, 0);
 }
-.searchContacts:focus{
+#searchContacts:focus{
   border-color: rgb(0, 0, 0);
 }
 label[for=searchContacts]{
   font-size: 1.2rem;
-  padding: 0 0.3rem;
   position: absolute;
   cursor: text;
-  top: 1rem;
-  left: 23rem;
+  top: 0;
+  left: 2rem;
   transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
   background-color: hsl(294,37%,72%);
+  padding: 0 0.3rem;
 }
-.searchContacts:focus ~ label[for=searchContacts],
-.searchContacts:not(:placeholder-shown).searchContacts:not(:focus)
+label[for=searchContacts]:hover{
+  z-index: 0;
+}
+#searchContacts:focus ~ label[for=searchContacts],
+#searchContacts:not(:placeholder-shown)#searchContacts:not(:focus)
 ~ label[for=searchContacts]{
-  top: 0;
+  top: -1rem;
   font-size: 0.8rem;
 }
 
