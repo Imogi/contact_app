@@ -11,6 +11,8 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+NOTE! When I cloned this project to another computer errors occured when attempting to run 'npm start'. This was fixed once I ran 'npm install react' within my linux terminal.
+
 # Features
 - Responsive UI for interacting with contact information.
 - Search functionality, narrows the contacts list to the contacts that contain information that are most similar to the search bar input. 
