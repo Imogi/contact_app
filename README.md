@@ -1,3 +1,6 @@
+# Preface
+First I want to preface that the best working version of this webpage should be ran on google chrome as some functionality such as scrollbar displays might not be compatible with other browsers such as firefox or safari. So please use this on chrome!
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
