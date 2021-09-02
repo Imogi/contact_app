@@ -1,14 +1,25 @@
 import { HiOutlineMail } from "react-icons/hi"
 import { BsPhone } from "react-icons/bs";
 import CopyToClipBoard from "./CopyToClipboard"
+import { useRef, useState } from "react"
 
 const ContactInformation = ({ contact }) => {
+
+
+    const myRef = useRef(null)
+    const scrollCheck = () => {
+        // User has scrolled down
+        if (myRef.current.scrollTop > 50) {
+            document.querySelector('.scrollDownHint').style.display = 'none'
+        }
+    }
+
     return (
-        <div className="innerbox__information">
+        <div className="innerbox__information" >
 
             <h3 className="innerbox__information__header">CONTACT INFORMATION</h3>
 
-            <div className="innerbox__information__scrollableInfo">
+            <div ref={myRef} className="innerbox__information__scrollableInfo" onScroll={scrollCheck}>
                 <div className="innerbox__information__scrollableInfo__div">
                     Username : {contact.username ? contact.username : "N/A"}
                 </div>
@@ -62,7 +73,9 @@ const ContactInformation = ({ contact }) => {
                     </div>
                 </div>
             </div>
-
+            <div className="scrollDownHint">
+                Scroll down for more information...
+            </div>
         </div >
     )
 }

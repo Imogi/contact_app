@@ -41,8 +41,8 @@ body{
 }
 .innerbox__contacts{
   background:rgba(255,255,255, 0.5);
-  width: 60vmax;
-  height: 40vmax;
+  width: 60vw;
+  height: 85vh;
   border-radius: 15px 0 0 15px;
   display: flex;
   justify-content: center;
@@ -53,7 +53,6 @@ body{
   position: fixed;
   width: 60%;
   height: 60px;
-  z-index: 10;
   display: flex;
   align-items: center;
   padding: 20px 10%;
@@ -61,15 +60,15 @@ body{
 }
 .searchContainer{
   position: relative;
-  width: 20vmax;
-  height: 2vmax;
+  width: 20vw;
+  height: 4vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 #searchContacts{
   position: absolute;
-  font-size: 20px;
+  font-size: 1.5vw;
   background: none;
   outline: none;
   border-radius: 15px;
@@ -83,11 +82,11 @@ body{
   border-color: rgb(0, 0, 0);
 }
 label[for=searchContacts]{
-  font-size: 1.2rem;
+  font-size: 1.1vw;
   position: absolute;
   cursor: text;
   top: 10%;
-  left: 4rem;
+  left: 2.5vw;
   transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
   background-color: hsl(308,35%,73%);
   padding: 0 0.3rem;
@@ -96,8 +95,8 @@ label[for=searchContacts]{
 #searchContacts:focus ~ label[for=searchContacts],
 #searchContacts:not(:placeholder-shown)#searchContacts:not(:focus)
 ~ label[for=searchContacts]{
-  top: -0.8rem;
-  font-size: 0.8rem;
+  top: -0.8vw;
+  font-size: 0.8vw;
 }
 
 .innerbox_contactsList{
@@ -116,7 +115,7 @@ label[for=searchContacts]{
   display: flex;
   background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3));
   width:100%;
-  height: 100px;
+  height: 13vh;
   margin-bottom: 15px;
   border-radius: 15px;
   text-align: left;
@@ -124,8 +123,8 @@ label[for=searchContacts]{
 
 .contact__usernameCircle{
   background-color: hsla(272, 68%, 52%, 1);
-  width: 90px;
-  height: 90px;
+  width: 11%;
+  height: 90%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
@@ -141,7 +140,7 @@ label[for=searchContacts]{
 }
 
 .contact__summary__name{
-  font-size: 25px;
+  font-size: 1.6vw;
   position: absolute;
   top: 35px;
   left: 15%;
@@ -151,7 +150,7 @@ label[for=searchContacts]{
   position: absolute;
   right: 7%;
   top: 30%;
-  font-size: 25px;
+  font-size: 1.6vw;
   border: none;
   cursor: pointer;
   border-radius: 10px;
@@ -170,16 +169,17 @@ label[for=searchContacts]{
 .innerbox__information{
   background: white;
   background: rgba(255,255,255, 0.5);
-  width: 30vmax;
-  height: 40vmax;
+  width: 30vw;
+  height: 85vh;
   border-radius: 0 15px 15px 0;
   text-align: left;
   position: relative;
 }
 
 .innerbox__information__header{
-  font-size: 30px;
-  position: fixed;
+  font-size: 1.5vw;
+  width: 95%;
+  position: absolute;
 }
 
 .innerbox__information__scrollableInfo{
@@ -197,6 +197,13 @@ label[for=searchContacts]{
 
 .innerbox__information__scrollableInfo__div{
   margin: 10px;
+}
+
+.scrollDownHint{
+  font-size: 1.2rem;
+  position: absolute;
+  bottom: 1%;
+  left: 13%;
 }
 
 /*
