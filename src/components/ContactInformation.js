@@ -3,10 +3,16 @@ import { BsPhone } from "react-icons/bs";
 import CopyToClipBoard from "./CopyToClipboard"
 import { useRef, useState } from "react"
 
+/*
+    React component for Contact information box
+*/
+
+
 const ContactInformation = ({ contact }) => {
 
-
+    // Uses a useRef hook to set a reference point 
     const myRef = useRef(null)
+
     const scrollCheck = () => {
         // User has scrolled down
         if (myRef.current.scrollTop > 50) {

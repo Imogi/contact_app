@@ -3,6 +3,10 @@ import ContactListHeader from "./ContactListHeader"
 import { useRef, useState } from "react"
 import ReturnToTopBtn from "./ReturnToTopBtn"
 
+/*
+    React component for Contact List box.
+*/
+
 const ContactList = ({ contacts, clickMoreInfo, onSearch, clicked, toggle }) => {
 
     const myRef = useRef(null)

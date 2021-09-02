@@ -1,5 +1,9 @@
 import { FaChevronUp } from "react-icons/fa"
 
+/*
+    React component for Return to the top button.
+*/
+
 const ReturnToTopBtn = ({ click, scrolled }) => {
 
     return (

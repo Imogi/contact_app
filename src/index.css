@@ -39,6 +39,11 @@ body{
   align-items: center;
   justify-content: center;
 }
+
+
+/*
+  CSS for CONTACT LIST box (left box)
+*/
 .innerbox__contacts{
   background:rgba(255,255,255, 0.5);
   width: 60vw;
@@ -47,7 +52,6 @@ body{
   display: flex;
   justify-content: center;
 }
-
 
 .innerbox__contactsHeader{
   position: fixed;
@@ -85,7 +89,7 @@ label[for=searchContacts]{
   font-size: 1.1vw;
   position: absolute;
   cursor: text;
-  top: 10%;
+  top: 9%;
   left: 2.5vw;
   transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
   background-color: hsl(308,35%,73%);
@@ -232,7 +236,7 @@ label[for=searchContacts]{
 }
 
 /*
-  CSS for copy to clipboard
+  CSS for copy to clipboard button
 */
 .clipboardCopyContainer{
   position: relative;
