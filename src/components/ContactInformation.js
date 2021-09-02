@@ -1,7 +1,7 @@
 import { HiOutlineMail } from "react-icons/hi"
 import { BsPhone } from "react-icons/bs";
 import CopyToClipBoard from "./CopyToClipboard"
-import { useRef, useState } from "react"
+import { useRef } from "react"
 
 /*
     React component for Contact information box
