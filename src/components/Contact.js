@@ -1,7 +1,8 @@
-
+/*
+    React component for each individual contact card.
+*/
 
 const Contact = ({ contact, clickMoreInfo }) => {
-
 
     return (
         < div className="contact" >

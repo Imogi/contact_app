@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react"
 
-const ContactListHeader = ({ onSearch, onClick, toggle }) => {
+/*
+    React component for Contact List header.
+    Contains search bar.
+*/
+
+const ContactListHeader = ({ onSearch }) => {
 
     const [search, setSearch] = useState("");
 

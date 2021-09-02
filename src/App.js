@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
-
 import Header from './components/Header'
 import ContactList from './components/ContactList'
 import ContactInformation from './components/ContactInformation'
 import PopupModal from './components/PopupModal';
+
+/*
+  Main App
+*/
 
 function App() {
 
@@ -85,8 +88,6 @@ function App() {
   const clickMoreInfo = (contact) => {
     setContactInfo(contact)
   }
-
-
 
 
   return (
