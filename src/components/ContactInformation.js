@@ -15,7 +15,7 @@ const ContactInformation = ({ contact }) => {
 
     const scrollCheck = () => {
         // User has scrolled down
-        if (myRef.current.scrollTop > 50) {
+        if (myRef.current.scrollTop > 10) {
             document.querySelector('.scrollDownHint').style.display = 'none'
         }
     }
